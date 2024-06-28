@@ -1,5 +1,5 @@
-CLIENT_NAME = client
-SERVER_NAME = server
+NAME = client
+NAMESRV = server
 
 CLIENT_SRCS = client.c
 SERVER_SRCS = server.c
@@ -25,20 +25,20 @@ RESET = \033[0m
 	@$(CC) -c $< -o $@
 	@echo "$(GRAY)Compiled: $<$(RESET)"
 
-all: $(CLIENT_NAME) $(SERVER_NAME)
+all: $(NAME) $(NAMESRV)
 
 $(LIBFT):
 	@echo "$(YELLOW)Building libft...$(RESET)"
 	@make --no-print-directory -C $(LIBFT_DIR)
 	@echo "$(GREEN)Library $(LIBFT_FILE) successfully built!$(RESET)"
 
-$(CLIENT_NAME): $(CLIENT_OBJS) $(LIBFT)
-	@$(CC) -o $(CLIENT_NAME) $^
-	@echo "$(GREEN)Executable $(CLIENT_NAME) successfully created!$(RESET)"
+$(NAME): $(CLIENT_OBJS) $(LIBFT)
+	@$(CC) -o $(NAME) $^
+	@echo "$(GREEN)Executable $(NAME) successfully created!$(RESET)"
 
-$(SERVER_NAME): $(SERVER_OBJS) $(LIBFT)
-	@$(CC) -o $(SERVER_NAME) $^
-	@echo "$(GREEN)Executable $(SERVER_NAME) successfully created!$(RESET)"
+$(NAMESRV): $(SERVER_OBJS) $(LIBFT)
+	@$(CC) -o $(NAMESRV) $^
+	@echo "$(GREEN)Executable $(NAMESRV) successfully created!$(RESET)"
 
 clean:
 	@echo "$(BLUE)Cleaning object files...$(RESET)"
@@ -48,7 +48,7 @@ clean:
 
 fclean: clean
 	@echo "$(BLUE)Complete cleanup, delete $(NAME)...$(RESET)"
-	@rm -f $(CLIENT_NAME) $(SERVER_NAME)
+	@rm -f $(NAME) $(NAMESRV)
 	@make --no-print-directory -C $(LIBFT_DIR) fclean
 	@echo "$(GREEN)Cleaning complete!$(RESET)"
 
