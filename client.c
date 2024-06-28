@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	int		i;
 
 	if (ac != 3)
-		return (ft_printf(RED "Usage: <pid> <msg>\n" RESET), 1);
+		return (ft_printf(RED "Usage: ./client <pid> <msg>\n" RESET), 1);
 	pid = ft_atoi(av[1]);
 	msg = av[2];
 	i = 0;

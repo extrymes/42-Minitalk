@@ -6,17 +6,17 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 21:59:17 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/28 15:53:17 by sabras           ###   ########.fr       */
+/*   Updated: 2024/06/29 00:40:29 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	ft_handle_server(int signal);
+static void	ft_handle_server(int signal);
 
 int	main(void)
 {
-	ft_printf("My Server PID is %d\n", getpid());
+	ft_printf("My Server PID is \x1b[32m%d\x1b[0m\n", getpid());
 	ft_printf(YELLOW "Waiting for a message...\n" RESET);
 	while (1)
 	{
@@ -27,7 +27,7 @@ int	main(void)
 	return (0);
 }
 
-void	ft_handle_server(int signal)
+static void	ft_handle_server(int signal)
 {
 	static int	bit = 0;
 	static int	i = 0;
