@@ -6,12 +6,13 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:16:46 by sabras            #+#    #+#             */
-/*   Updated: 2024/06/28 13:26:00 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/01 19:13:34 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include "ft_printf/ft_printf.h"
 # include <unistd.h>
 # define GRAY "\033[30m"
 # define RED "\033[31m"
