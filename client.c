@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 21:59:19 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/02 22:19:52 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/02 23:00:24 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_char_to_bin(char c, int srv_pid)
 		{
 			if (itr == 50)
 			{
-				ft_printf(RED "No response from server" RESET, 1);
+				ft_printf(RED "No response from server\n" RESET, 1);
 				exit(1);
 			}
 			itr++;
