@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 21:59:19 by sabras            #+#    #+#             */
-/*   Updated: 2024/07/02 22:14:45 by sabras           ###   ########.fr       */
+/*   Updated: 2024/07/02 22:19:52 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	main(int ac, char **av)
 	if (ac != 3)
 		return (ft_printf(RED "Usage:\t./client [SRV_PID] [MESSAGE]\n" RESET), 1);
 	srv_pid = ft_atoi(av[1]);
+	if (srv_pid <= 0)
+		return (ft_printf(RED "Invalid PID\n" RESET), 1);
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_RESTART | SA_SIGINFO;
 	sa.sa_sigaction = ft_sig_handler;
